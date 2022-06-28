@@ -1,1 +1,5 @@
-<h1>This is a Contact page</h1>
+@extends("layouts.app")
+
+@section("content")
+    <h1>Contact Us</h1>
+@endsection
