@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
     var_dump("didieu");
-    $storagePath  = Storage::disk('local');
-    var_dump( $storagePath );
+    // $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
+    $storagePath = Storage::disk('public')->getDriver()->getAdapter()->getPathPrefix();
+    dd( $storagePath );
 
     return view('welcome');
 });
