@@ -17,15 +17,20 @@ use Illuminate\Support\Facades\Storage;
 Route::get('/', function () {
     var_dump("didieu");
     // $storagePath  = Storage::disk('local')->getDriver()->getAdapter()->getPathPrefix();
-    $storagePath = Storage::disk('public')->getDriver()->getAdapter()->getPathPrefix();
-    dd( $storagePath );
+    // $storagePath = Storage::disk('public')->getDriver()->getAdapter()->getPathPrefix();
+    // dd( $storagePath );
 
     return view('welcome');
 });
 
 
 Route::get( '/about', function () {
-    return view('about');
+    $arr = ["agus" => ["data" => ["alamat" => "ciawi","no_hp"=> "0834273842"] ], "aris"=>["data" => ["alamat" => "cinusa", "no_hp"=> "0834276438264382"]] ];
+    return view('about',["arr"=> $arr]);
+});
+
+Route::get( '/contact', function () {
+    return view('contact');
 });
 
 
